@@ -1,0 +1,9 @@
+<h1>問い合わせ一覧</h1>
+
+<% @contacts.each do |contact| %>
+  <p>申請者名:<%= contact.name %></p>
+  <p>連絡先:<%= contact.email %></p>
+  <p>問い合わせ内容:<%= contact.content %></p>
+<% end %>
+
+<%= link_to "問い合わせを作成する", new_contact_path %>
