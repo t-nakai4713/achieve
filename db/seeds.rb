@@ -14,7 +14,7 @@
                password_confirmation: password,
 	       name: name
                )
-  Blog.create!(
+  Blog.create(
     title: "ダミー",
     content: "ダミー",
     user_id: n+1
