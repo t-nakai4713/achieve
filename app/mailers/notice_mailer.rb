@@ -11,4 +11,13 @@ class NoticeMailer < ApplicationMailer
     mail to: "t-nakai@nttpc.co.jp",
     subject: '【Achieve】ブログが投稿されました'
   end
+
+  def sendmail_contact(contact)
+    @contact = contact
+    @useremail = @contact.email
+
+    mail to: @useremail,
+    subject: '【Achieve】お問い合わせを承りました'
+  end
+
 end
