@@ -1,0 +1,20 @@
+<table class="table">
+ <thead>
+  <tr>
+   <th>Title</th>
+   <th>Content</th>
+   <th>Link</th>
+  </tr>
+ </thead>
+
+ <tbody>
+<% @poems.each do |poem| %>
+ <tr>
+  <th><%= poem.title %></th>
+  <th><%= poem.content %></th>
+  <th><%= link_to 'Show', poem, class: 'btn btn-default' %></th>
+ </tr>
+<% end %>
+
+ </tbody>
+</table>
