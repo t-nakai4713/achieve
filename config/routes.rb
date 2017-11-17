@@ -35,6 +35,12 @@ Rails.application.routes.draw do
 
   resources :poems, only: [:index, :show]
 
+
+resources :conversations do
+  resources :messages
+end
+
+
   root 'top#index'
 
 if Rails.env.development?
