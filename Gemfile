@@ -74,3 +74,5 @@ group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
 end
+
+gem 'pusher'
