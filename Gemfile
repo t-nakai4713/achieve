@@ -76,3 +76,4 @@ group :development do
 end
 
 gem 'pusher'
+gem 'fog'
