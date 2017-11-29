@@ -1,0 +1,392 @@
+nakai4713:~/workspace/achive (master) $ bundle exec cap production deploy:check
+00:00 git:wrapper
+      01 mkdir -p /tmp
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.189s
+      Uploading /tmp/git-ssh-achieve-production-ubuntu.sh 100.0%
+      02 chmod 700 /tmp/git-ssh-achieve-production-ubuntu.sh
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.188s
+00:00 git:check
+      01 git ls-remote --heads https://github.com/t-nakai4713/achieve
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 cfce5134d9c94f3aa6d43fe31b5373a06ec9c462       refs/heads/master
+    ✔ 01 app@54.64.142.160 0.865s
+00:01 deploy:check:directories
+      01 mkdir -p /var/www/achieve/shared /var/www/achieve/releases
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.187s
+00:01 deploy:check:linked_dirs
+      01 mkdir -p /var/www/achieve/shared/log /var/www/achieve/shared/tmp/pids /var/www/achieve/shared/tmp/cache /var/www/achieve/shared/…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.186s
+00:02 deploy:check:make_linked_dirs
+      01 mkdir -p /var/www/achieve/shared /var/www/achieve/shared/config
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.186s
+nakai4713:~/workspace/achive (master) $ 
+
+
+nakai4713:~/workspace/achive (master) $ bundle exec cap production deploy
+00:00 git:wrapper
+      01 mkdir -p /tmp
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.186s
+      Uploading /tmp/git-ssh-achieve-production-ubuntu.sh 100.0%
+      02 chmod 700 /tmp/git-ssh-achieve-production-ubuntu.sh
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.184s
+00:00 git:check
+      01 git ls-remote --heads https://github.com/t-nakai4713/achieve
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 cfce5134d9c94f3aa6d43fe31b5373a06ec9c462       refs/heads/master
+    ✔ 01 app@54.64.142.160 0.805s
+00:01 deploy:check:directories
+      01 mkdir -p /var/www/achieve/shared /var/www/achieve/releases
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.180s
+00:01 deploy:check:linked_dirs
+      01 mkdir -p /var/www/achieve/shared/log /var/www/achieve/shared/tmp/pids /var/www/achieve/shared/tmp/cache /var/www/achieve/shared/…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.184s
+00:01 deploy:check:make_linked_dirs
+      01 mkdir -p /var/www/achieve/shared /var/www/achieve/shared/config
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.182s
+00:02 git:clone
+      The repository mirror is at /var/www/achieve/repo
+00:03 git:update
+      01 git remote update --prune
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 Fetching origin
+    ✔ 01 app@54.64.142.160 0.824s
+00:04 git:create_release
+      01 mkdir -p /var/www/achieve/releases/20171129065312
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.181s
+      02 git archive master | tar -x -f - -C /var/www/achieve/releases/20171129065312
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.223s
+00:04 git:set_current_revision
+      01 echo "cfce5134d9c94f3aa6d43fe31b5373a06ec9c462" >> REVISION
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.184s
+00:05 deploy:symlink:linked_files
+      01 mkdir -p /var/www/achieve/releases/20171129065312 /var/www/achieve/releases/20171129065312/config
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.181s
+      02 ln -s /var/www/achieve/shared/.env /var/www/achieve/releases/20171129065312/.env
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.184s
+      03 rm /var/www/achieve/releases/20171129065312/config/secrets.yml
+      03 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 03 app@54.64.142.160 0.181s
+      04 ln -s /var/www/achieve/shared/config/secrets.yml /var/www/achieve/releases/20171129065312/config/secrets.yml
+      04 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 04 app@54.64.142.160 0.183s
+00:06 deploy:symlink:linked_dirs
+      01 mkdir -p /var/www/achieve/releases/20171129065312 /var/www/achieve/releases/20171129065312/tmp /var/www/achieve/releases/2017112…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.182s
+      02 rm -rf /var/www/achieve/releases/20171129065312/log
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.184s
+      03 ln -s /var/www/achieve/shared/log /var/www/achieve/releases/20171129065312/log
+      03 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 03 app@54.64.142.160 0.183s
+      04 ln -s /var/www/achieve/shared/tmp/pids /var/www/achieve/releases/20171129065312/tmp/pids
+      04 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 04 app@54.64.142.160 0.180s
+      05 ln -s /var/www/achieve/shared/tmp/cache /var/www/achieve/releases/20171129065312/tmp/cache
+      05 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 05 app@54.64.142.160 0.184s
+      06 ln -s /var/www/achieve/shared/tmp/sockets /var/www/achieve/releases/20171129065312/tmp/sockets
+      06 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 06 app@54.64.142.160 0.182s
+      07 ln -s /var/www/achieve/shared/public/uploads /var/www/achieve/releases/20171129065312/public/uploads
+      07 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 07 app@54.64.142.160 0.185s
+      08 rm -rf /var/www/achieve/releases/20171129065312/public/assets
+      08 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 08 app@54.64.142.160 0.187s
+      09 ln -s /var/www/achieve/shared/public/assets /var/www/achieve/releases/20171129065312/public/assets
+      09 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 09 app@54.64.142.160 0.180s
+00:11 bundler:install
+      01 /usr/local/rbenv/bin/rbenv exec bundle install --path /var/www/achieve/shared/bundle --without development test --deployment --q…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.532s
+00:11 deploy:assets:precompile
+      01 /usr/local/rbenv/bin/rbenv exec bundle exec rake assets:precompile
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 rake aborted!
+      01 ArgumentError: Missing required arguments: aws_secret_access_key
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:244:in `validate_options'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:268:in `handle_settings'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:98:in `new'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/services_mixin.rb:16:in `new'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/storage.rb:27:in `new'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:124:in `eager_load_fo…
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:137:in `fog_credentia…
+      01 /var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:2:in `block in <top (required)>'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:159:in `configure'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave.rb:14:in `configure'
+      01 /var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:1:in `<top (required)>'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:652:in `block in load_config_initializer'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/notifications.rb:166:in `instrument'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:651:in `load_config_initializer'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:616:in `block (2 levels) in <class:Engine>'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `each'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `block in <class:Engine>'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `each'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `tsort_each_child'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+      01 /var/www/achieve/releases/20171129065312/config/environment.rb:5:in `<top (required)>'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:328:in `require_environment!'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in defi…
+      01 /var/www/achieve/shared/bundle/ruby/2.3.0/gems/rake-12.2.1/exe/rake:27:in `<top (required)>'
+      01 /usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `load'
+      01 /usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `<main>'
+      01 Tasks: TOP => environment
+      01 (See full trace by running task with --trace)
+(Backtrace restricted to imported tasks)
+cap aborted!
+SSHKit::Runner::ExecuteError: Exception while executing as app@54.64.142.160: rake exit status: 1
+rake stdout: Nothing written
+rake stderr: bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+rake aborted!
+ArgumentError: Missing required arguments: aws_secret_access_key
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:244:in `validate_options'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:268:in `handle_settings'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:98:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/services_mixin.rb:16:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/storage.rb:27:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:124:in `eager_load_fog'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:137:in `fog_credentials='
+/var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:2:in `block in <top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:159:in `configure'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave.rb:14:in `configure'
+/var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:1:in `<top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:652:in `block in load_config_initializer'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/notifications.rb:166:in `instrument'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:651:in `load_config_initializer'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:616:in `block (2 levels) in <class:Engine>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `each'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `block in <class:Engine>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `each'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `tsort_each_child'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+/var/www/achieve/releases/20171129065312/config/environment.rb:5:in `<top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:328:in `require_environment!'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/rake-12.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `load'
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `<main>'
+Tasks: TOP => environment
+(See full trace by running task with --trace)
+
+
+Caused by:
+SSHKit::Command::Failed: rake exit status: 1
+rake stdout: Nothing written
+rake stderr: bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+rake aborted!
+ArgumentError: Missing required arguments: aws_secret_access_key
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:244:in `validate_options'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:268:in `handle_settings'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:98:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/services_mixin.rb:16:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/storage.rb:27:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:124:in `eager_load_fog'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:137:in `fog_credentials='
+/var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:2:in `block in <top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:159:in `configure'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave.rb:14:in `configure'
+/var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:1:in `<top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:652:in `block in load_config_initializer'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/notifications.rb:166:in `instrument'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:651:in `load_config_initializer'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:616:in `block (2 levels) in <class:Engine>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `each'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `block in <class:Engine>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `each'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `tsort_each_child'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+/var/www/achieve/releases/20171129065312/config/environment.rb:5:in `<top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:328:in `require_environment!'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/rake-12.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `load'
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `<main>'
+Tasks: TOP => environment
+(See full trace by running task with --trace)
+
+Tasks: TOP => deploy:assets:precompile
+(See full trace by running task with --trace)
+The deploy has failed with an error: Exception while executing as app@54.64.142.160: rake exit status: 1
+rake stdout: Nothing written
+rake stderr: bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+rake aborted!
+ArgumentError: Missing required arguments: aws_secret_access_key
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:244:in `validate_options'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:268:in `handle_settings'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/service.rb:98:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/core/services_mixin.rb:16:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/fog-core-1.45.0/lib/fog/storage.rb:27:in `new'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:124:in `eager_load_fog'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:137:in `fog_credentials='
+/var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:2:in `block in <top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave/uploader/configuration.rb:159:in `configure'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/carrierwave-1.2.1/lib/carrierwave.rb:14:in `configure'
+/var/www/achieve/releases/20171129065312/config/initializers/carrierwave.rb:1:in `<top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `block in load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:268:in `load'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:652:in `block in load_config_initializer'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/notifications.rb:166:in `instrument'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:651:in `load_config_initializer'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:616:in `block (2 levels) in <class:Engine>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `each'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/engine.rb:615:in `block in <class:Engine>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `each'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `tsort_each_child'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+/var/www/achieve/releases/20171129065312/config/environment.rb:5:in `<top (required)>'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:328:in `require_environment!'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/rake-12.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `load'
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `<main>'
+Tasks: TOP => environment
+(See full trace by running task with --trace)
+
+
+** DEPLOY FAILED
+** Refer to log/capistrano.log for details. Here are the last 20 lines:
+
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `each'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:44:in `tsort_each_child'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+
+/var/www/achieve/releases/20171129065312/config/environment.rb:5:in `<top (required)>'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:328:in `require_environment!'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/railties-4.2.3/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+
+/var/www/achieve/shared/bundle/ruby/2.3.0/gems/rake-12.2.1/exe/rake:27:in `<top (required)>'
+
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `load'
+
+/usr/local/rbenv/versions/2.3.0/bin/bundle:23:in `<main>'
+
+ DEBUG [bf1b7c83]       Tasks: TOP => environment
+
+ DEBUG [bf1b7c83]       (See full trace by running task with --trace)
+
+nakai4713:~/workspace/achive (master) $ 
