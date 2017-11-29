@@ -81,8 +81,11 @@ group :development do
 end
 
 gem 'pusher'
+<<<<<<< HEAD
 
 #AWS
 gem 'fog'
 gem 'dotenv-rails'
 gem 'unicorn'
+=======
+>>>>>>> parent of 56b2bbd... AWS_S3upload
