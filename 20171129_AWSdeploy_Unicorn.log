@@ -1,0 +1,508 @@
+[app@ip-172-31-28-149 shared]$ cat /var/www/achieve/shared/log/unicorn.log
+I, [2017-11-29T17:21:31.177170 #18326]  INFO -- : Refreshing Gem list
+I, [2017-11-29T17:21:33.602596 #18326]  INFO -- : listening on addr=/var/www/achieve/current/tmp/sockets/unicorn.sock fd=8
+The PGconn, PGresult, and PGError constants are deprecated, and will be
+removed as of version 1.0.
+
+You should use PG::Connection, PG::Result, and PG::Error instead, respectively.
+
+Called from /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+I, [2017-11-29T17:21:33.614391 #18326]  INFO -- : master process ready
+I, [2017-11-29T17:21:33.621692 #18332]  INFO -- : worker=0 ready
+I, [2017-11-29T17:21:33.622787 #18334]  INFO -- : worker=1 ready
+I, [2017-11-29T17:21:34.008158 #18426]  INFO -- : executing ["/var/www/achieve/shared/bundle/ruby/2.3.0/bin/unicorn", "-c", "/var/www/achieve/current/config/unicorn/production.rb", "-E", "deployment", "-D", {8=>#<Kgio::UNIXServer:/var/www/achieve/current/tmp/sockets/unicorn.sock>}] (in /var/www/achieve/releases/20171129082113)
+I, [2017-11-29T17:21:34.008261 #18426]  INFO -- : forked child re-executing...
+I, [2017-11-29T17:21:34.302803 #18426]  INFO -- : inherited addr=/var/www/achieve/current/tmp/sockets/unicorn.sock fd=8
+I, [2017-11-29T17:21:34.303001 #18426]  INFO -- : Refreshing Gem list
+The PGconn, PGresult, and PGError constants are deprecated, and will be
+removed as of version 1.0.
+
+You should use PG::Connection, PG::Result, and PG::Error instead, respectively.
+
+Called from /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+I, [2017-11-29T17:21:36.682025 #18426]  INFO -- : master process ready
+I, [2017-11-29T17:21:36.685576 #18433]  INFO -- : worker=0 ready
+I, [2017-11-29T17:21:36.689452 #18435]  INFO -- : worker=1 ready
+I, [2017-11-29T17:21:36.871279 #18326]  INFO -- : reaped #<Process::Status: pid 18332 exit 0> worker=0
+I, [2017-11-29T17:21:36.871376 #18326]  INFO -- : reaped #<Process::Status: pid 18334 exit 0> worker=1
+I, [2017-11-29T17:21:36.871406 #18326]  INFO -- : master complete
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:22:27 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:22:27 +0900] "GET / HTTP/1.0" 200 - 0.0486
+Started GET "/" for 173.252.105.116 at 2017-11-29 17:26:35 +0900
+Processing by TopController#index as */*
+  Rendered top/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+173.252.105.116 - - [29/Nov/2017:17:26:35 +0900] "GET / HTTP/1.0" 200 - 0.0076
+Started GET "/users/sign_in" for 210.136.166.160 at 2017-11-29 17:26:55 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (419.7ms)
+Completed 200 OK in 453ms (Views: 426.2ms | ActiveRecord: 3.3ms)
+210.136.166.160 - - [29/Nov/2017:17:26:56 +0900] "GET /users/sign_in HTTP/1.0" 200 - 0.4859
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:26:59 +0900
+I, [2017-11-29T17:26:59.319758 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:26:59 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0092
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:26:59 +0900
+I, [2017-11-29T17:26:59.604252 #18435]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:26:59 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0084
+Started GET "/users/auth/twitter" for 210.136.166.160 at 2017-11-29 17:27:05 +0900
+I, [2017-11-29T17:27:05.386806 #18435]  INFO -- omniauth: (twitter) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:27:05 +0900] "GET /users/auth/twitter HTTP/1.0" 302 100 0.2183
+Started GET "/users/auth/twitter" for 210.136.166.160 at 2017-11-29 17:27:05 +0900
+I, [2017-11-29T17:27:05.679693 #18433]  INFO -- omniauth: (twitter) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:27:05 +0900] "GET /users/auth/twitter HTTP/1.0" 302 100 0.2103
+Started GET "/users/auth/twitter/callback?oauth_token=LRRHzwAAAAAA27I3AAABYAbi9qk&oauth_verifier=gMD04FXWI2umwT6SSLCIUidhTyH6nD7d" for 210.136.166.160 at 2017-11-29 17:27:08 +0900
+I, [2017-11-29T17:27:08.682916 #18433]  INFO -- omniauth: (twitter) Callback phase initiated.
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"LRRHzwAAAAAA27I3AAABYAbi9qk", "oauth_verifier"=>"gMD04FXWI2umwT6SSLCIUidhTyH6nD7d"}
+  User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1  [["provider", "twitter"], ["uid", "923488966044631040"]]
+   (0.1ms)  BEGIN
+  User Exists (0.3ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = '923488966044631040-twitter@example.com' LIMIT 1
+  SQL (0.4ms)  INSERT INTO "users" ("name", "image_url", "provider", "uid", "email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "tn4713dev"], ["image_url", "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png"], ["provider", "twitter"], ["uid", "923488966044631040"], ["email", "923488966044631040-twitter@example.com"], ["encrypted_password", "$2a$11$52Ziox0zqxQQKeHFaIwS9O3sShJSngh3uieJuaViyEBAMiykSr2Du"], ["confirmed_at", "2017-11-29 08:27:09.514389"], ["created_at", "2017-11-29 08:27:09.521210"], ["updated_at", "2017-11-29 08:27:09.521210"]]
+   (0.9ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2017-11-29 08:27:09.525380"], ["current_sign_in_at", "2017-11-29 08:27:09.525380"], ["last_sign_in_ip", "210.136.166.160/32"], ["current_sign_in_ip", "210.136.166.160/32"], ["sign_in_count", 1], ["updated_at", "2017-11-29 08:27:09.526026"], ["id", 1]]
+   (0.8ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 186ms (ActiveRecord: 3.4ms)
+210.136.166.160 - - [29/Nov/2017:17:27:09 +0900] "GET /users/auth/twitter/callback?oauth_token=LRRHzwAAAAAA27I3AAABYAbi9qk&oauth_verifier=gMD04FXWI2umwT6SSLCIUidhTyH6nD7d HTTP/1.0" 302 - 0.8492
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:27:09 +0900
+Processing by TopController#index as HTML
+  User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 2.1ms | ActiveRecord: 3.9ms)
+210.136.166.160 - - [29/Nov/2017:17:27:09 +0900] "GET / HTTP/1.0" 200 - 0.0332
+Started DELETE "/users/sign_out" for 210.136.166.160 at 2017-11-29 17:27:43 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DZn9MG16kk/8hb3CS1RAcDOUKHwPGhPvLToihFOv9xPoAsLA/0hl9mBNfKWSA3djWQhT+YLW7eGks0XwRXam2g=="}
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+   (0.1ms)  BEGIN
+   (0.1ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 377ms (ActiveRecord: 0.5ms)
+210.136.166.160 - - [29/Nov/2017:17:27:43 +0900] "DELETE /users/sign_out HTTP/1.0" 302 - 0.3843
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:27:43 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:27:43 +0900] "GET / HTTP/1.0" 200 - 0.0074
+Started GET "/users/sign_in" for 210.136.166.160 at 2017-11-29 17:27:45 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:27:45 +0900] "GET /users/sign_in HTTP/1.0" 200 - 0.0142
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:27:46 +0900
+I, [2017-11-29T17:27:46.680674 #18435]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:27:46 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0038
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:27:46 +0900
+I, [2017-11-29T17:27:46.972745 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:27:46 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0032
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:29:46 +0900
+I, [2017-11-29T17:29:46.798157 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:29:46 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0032
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:29:47 +0900
+I, [2017-11-29T17:29:47.194385 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:29:47 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0029
+Started GET "/users/sign_in" for 66.220.152.134 at 2017-11-29 17:32:36 +0900
+Processing by Devise::SessionsController#new as */*
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+66.220.152.134 - - [29/Nov/2017:17:32:36 +0900] "GET /users/sign_in HTTP/1.0" 200 - 0.0066
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:33:27 +0900
+I, [2017-11-29T17:33:27.769448 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:33:27 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0030
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:33:28 +0900
+I, [2017-11-29T17:33:28.043496 #18435]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:33:28 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0029
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:33:31 +0900
+I, [2017-11-29T17:33:31.827163 #18435]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:33:31 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0031
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:33:32 +0900
+I, [2017-11-29T17:33:32.074101 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:33:32 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0031
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:33:49 +0900
+I, [2017-11-29T17:33:49.588996 #18433]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:33:49 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0031
+Started GET "/users/auth/facebook" for 210.136.166.160 at 2017-11-29 17:33:49 +0900
+I, [2017-11-29T17:33:49.955238 #18435]  INFO -- omniauth: (facebook) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:33:49 +0900] "GET /users/auth/facebook HTTP/1.0" 302 263 0.0029
+Started GET "/users/auth/facebook/callback?code=AQAj1r6KcYXFhbqck_u1MvBkZFE-SC7qi5tR65KK3pkQEOJHK0bum21PJC0MDPVT2b-buSispr-2N_bBssQWs5nrvpxJZzHihOtC-LzkmuS1-VOOqiqszKOe-0nNNsu2Pis95XWVj4NldoGkFiOQdpPlKMil1_g-KQ2MbmWUYClQNAiJyGhRE5zKHnkyxsARsmTakXoMNuDmhenx7zjyzrkRXlOmBMpmhUqJ7aKUJrsTiTUQR4EW5i0dlNtK_VA8ei-4iYT3eEgzzCZyFGJm2en0N5K0r3UPsTnQTimpzhfCLCkhMiwOcPJBPyXti7F8Y8CzXuG1J2YeiwtGfOXmsOiW&state=c703ebd5718e45e34944723d52742d3fd977e15fa13b01df" for 210.136.166.160 at 2017-11-29 17:33:50 +0900
+I, [2017-11-29T17:33:50.484589 #18433]  INFO -- omniauth: (facebook) Callback phase initiated.
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAj1r6KcYXFhbqck_u1MvBkZFE-SC7qi5tR65KK3pkQEOJHK0bum21PJC0MDPVT2b-buSispr-2N_bBssQWs5nrvpxJZzHihOtC-LzkmuS1-VOOqiqszKOe-0nNNsu2Pis95XWVj4NldoGkFiOQdpPlKMil1_g-KQ2MbmWUYClQNAiJyGhRE5zKHnkyxsARsmTakXoMNuDmhenx7zjyzrkRXlOmBMpmhUqJ7aKUJrsTiTUQR4EW5i0dlNtK_VA8ei-4iYT3eEgzzCZyFGJm2en0N5K0r3UPsTnQTimpzhfCLCkhMiwOcPJBPyXti7F8Y8CzXuG1J2YeiwtGfOXmsOiW", "state"=>"c703ebd5718e45e34944723d52742d3fd977e15fa13b01df"}
+  User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1  [["provider", "facebook"], ["uid", "1464588993635145"]]
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  INSERT INTO "users" ("name", "provider", "uid", "email", "image_url", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "Tomohito Nakai"], ["provider", "facebook"], ["uid", "1464588993635145"], ["email", "1464588993635145-facebook@example.com"], ["image_url", "http://graph.facebook.com/v2.6/1464588993635145/picture"], ["encrypted_password", "$2a$11$h8Cee8zSUOOwqw8.hjBbWu85bDHfFs6Ht2fnQehF34tMH6p7JgqI."], ["confirmed_at", "2017-11-29 08:33:51.796652"], ["created_at", "2017-11-29 08:33:51.797226"], ["updated_at", "2017-11-29 08:33:51.797226"]]
+   (1.0ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2017-11-29 08:33:51.800509"], ["current_sign_in_at", "2017-11-29 08:33:51.800509"], ["last_sign_in_ip", "210.136.166.160/32"], ["current_sign_in_ip", "210.136.166.160/32"], ["sign_in_count", 1], ["updated_at", "2017-11-29 08:33:51.801122"], ["id", 2]]
+   (0.7ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 163ms (ActiveRecord: 2.7ms)
+210.136.166.160 - - [29/Nov/2017:17:33:51 +0900] "GET /users/auth/facebook/callback?code=AQAj1r6KcYXFhbqck_u1MvBkZFE-SC7qi5tR65KK3pkQEOJHK0bum21PJC0MDPVT2b-buSispr-2N_bBssQWs5nrvpxJZzHihOtC-LzkmuS1-VOOqiqszKOe-0nNNsu2Pis95XWVj4NldoGkFiOQdpPlKMil1_g-KQ2MbmWUYClQNAiJyGhRE5zKHnkyxsARsmTakXoMNuDmhenx7zjyzrkRXlOmBMpmhUqJ7aKUJrsTiTUQR4EW5i0dlNtK_VA8ei-4iYT3eEgzzCZyFGJm2en0N5K0r3UPsTnQTimpzhfCLCkhMiwOcPJBPyXti7F8Y8CzXuG1J2YeiwtGfOXmsOiW&state=c703ebd5718e45e34944723d52742d3fd977e15fa13b01df HTTP/1.0" 302 - 1.3208
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:33:51 +0900
+Processing by TopController#index as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+210.136.166.160 - - [29/Nov/2017:17:33:51 +0900] "GET / HTTP/1.0" 200 - 0.0065
+Started GET "/blogs" for 210.136.166.160 at 2017-11-29 17:33:57 +0900
+Processing by BlogsController#index as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Blog Load (0.3ms)  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+210.136.166.160 - - [29/Nov/2017:17:33:57 +0900] "GET /blogs HTTP/1.0" 200 - 0.0113
+Started GET "/blogs/new" for 210.136.166.160 at 2017-11-29 17:33:58 +0900
+Processing by BlogsController#new as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Rendered blogs/_form.html.erb (2.4ms)
+  Rendered blogs/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 19ms (Views: 4.9ms | ActiveRecord: 0.8ms)
+210.136.166.160 - - [29/Nov/2017:17:33:58 +0900] "GET /blogs/new HTTP/1.0" 200 - 0.0216
+Started GET "/users/edit" for 210.136.166.160 at 2017-11-29 17:34:01 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+210.136.166.160 - - [29/Nov/2017:17:34:01 +0900] "GET /users/edit HTTP/1.0" 200 - 0.0159
+Started PUT "/users" for 210.136.166.160 at 2017-11-29 17:34:19 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Erfs1RcEa/en7MscRVeoj2ZVN+JDqPPC3CgRUZgRTVmPgzczEi8hXXjpgsTtXngm7flGiyDdiipGpkLqIyJvYg==", "user"=>{"email"=>"1464588993635145-facebook@example.com", "name"=>"FBaccount", "avatar_cache"=>""}, "commit"=>"Update"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  UPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["name", "FBaccount"], ["updated_at", "2017-11-29 08:34:19.169120"], ["id", 2]]
+   (0.8ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 16ms (ActiveRecord: 1.6ms)
+210.136.166.160 - - [29/Nov/2017:17:34:19 +0900] "PUT /users HTTP/1.0" 302 - 0.0196
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:34:19 +0900
+Processing by TopController#index as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 1.1ms)
+210.136.166.160 - - [29/Nov/2017:17:34:19 +0900] "GET / HTTP/1.0" 200 - 0.0083
+Started GET "/blogs" for 210.136.166.160 at 2017-11-29 17:34:25 +0900
+Processing by BlogsController#index as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Blog Load (0.3ms)  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.2ms)
+210.136.166.160 - - [29/Nov/2017:17:34:26 +0900] "GET /blogs HTTP/1.0" 200 - 0.0119
+Started GET "/blogs/new" for 210.136.166.160 at 2017-11-29 17:34:26 +0900
+Processing by BlogsController#new as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Rendered blogs/_form.html.erb (1.4ms)
+  Rendered blogs/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+210.136.166.160 - - [29/Nov/2017:17:34:26 +0900] "GET /blogs/new HTTP/1.0" 200 - 0.0076
+Started POST "/blogs/confirm" for 210.136.166.160 at 2017-11-29 17:34:31 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zDivuYS/jv3fhaRaHb4D4lxCFUysAEYq5Gm0RC73hNNRDHRfgZTEVwCA7YK1t9NL1+5kJc91P8J+5+f/lcSm6A==", "blog"=>{"title"=>"test", "content"=>"test"}, "commit"=>"投稿"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Rendered blogs/confirm.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+210.136.166.160 - - [29/Nov/2017:17:34:31 +0900] "POST /blogs/confirm HTTP/1.0" 200 - 0.0089
+Started POST "/blogs" for 210.136.166.160 at 2017-11-29 17:34:33 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tjz7httzjHlEnee5OD79MkxefVFeooRNBgwtvY3QqPwrCCBg3ljG05uYrmGQNy2bx/IMOD3X/aWcgn4GNuOKxw==", "blog"=>{"title"=>"test", "content"=>"test"}, "commit"=>"登録"}
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+   (0.1ms)  BEGIN
+  SQL (0.3ms)  INSERT INTO "blogs" ("title", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "test"], ["content", "test"], ["user_id", 2], ["created_at", "2017-11-29 08:34:33.680845"], ["updated_at", "2017-11-29 08:34:33.680845"]]
+   (0.8ms)  COMMIT
+Redirected to http://54.64.142.160/blogs
+  Rendered notice_mailer/sendmail_blog.html.erb within layouts/mailer (0.6ms)
+  Rendered notice_mailer/sendmail_blog.text.erb within layouts/mailer (0.2ms)
+
+NoticeMailer#sendmail_blog: processed outbound mail in 284.1ms
+
+Sent mail to t-nakai@nttpc.co.jp (631.5ms)
+Date: Wed, 29 Nov 2017 17:34:33 +0900
+From: from@example.com
+To: t-nakai@nttpc.co.jp
+Message-ID: <5a1e7119ee286_48012b073fa29150518c3@ip-172-31-28-149.mail>
+Subject: =?UTF-8?Q?=E3=80=90Achieve=E3=80=91=E3=83=96=E3=83=AD=E3=82=B0=E3=81=8C=E6=8A=95=E7=A8=BF=E3=81=95=E3=82=8C=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a1e7119ec8d1_48012b073fa2915051716";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a1e7119ec8d1_48012b073fa2915051716
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+NoticeMailer#sendmail_blog
+
+, find me in app/views/notice_mailer/sendmail_blog.text.erb
+
+
+----==_mimepart_5a1e7119ec8d1_48012b073fa2915051716
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PGh0bWw+CiAgPGJvZHk+CiAgICA8aDE+QWNoaWV2ZeOBq+aWsOOBl+OBj+OD
+luODreOCsOOBjOaKleeov+OBleOCjOOBvuOBl+OBn++8gTwvaDE+Cgo8aDQ+
+dGl0bGU6IHRlc3Q8L2g0Pgo8cD5jb250ZW50OiB0ZXN0PC9wPgoKPHA+CiAg
+PGEgaHJlZj0iaHR0cHM6Ly9uYW1lbGVzcy1yZXRyZWF0LTQ3ODgyLmhlcm9r
+dWFwcC5jb20vL2Jsb2dzIj7mipXnqL/jgZXjgozjgZ/jg5bjg63jgrDjga/j
+gZPjgaHjgok8L2E+CjwvcD4KCiAgPC9ib2R5Pgo8L2h0bWw+Cg==
+
+----==_mimepart_5a1e7119ec8d1_48012b073fa2915051716--
+
+Completed 302 Found in 927ms (ActiveRecord: 2.0ms)
+210.136.166.160 - - [29/Nov/2017:17:34:34 +0900] "POST /blogs HTTP/1.0" 302 - 0.9320
+Started GET "/blogs" for 210.136.166.160 at 2017-11-29 17:34:34 +0900
+Processing by BlogsController#index as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+  Blog Load (0.2ms)  SELECT "blogs".* FROM "blogs"
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered blogs/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.7ms)
+210.136.166.160 - - [29/Nov/2017:17:34:34 +0900] "GET /blogs HTTP/1.0" 200 - 0.0149
+Started DELETE "/users/sign_out" for 210.136.166.160 at 2017-11-29 17:34:37 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m9NdJ8uR/FCNiiazAFjqQSfeYM6UHNTx4lCneQJQEaMG54bBzrq2+lKPb2uoUTrorHIRp/dprRl43vTCuWMzmA=="}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 2], ["read", "f"]]
+   (0.1ms)  BEGIN
+   (0.1ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+210.136.166.160 - - [29/Nov/2017:17:34:37 +0900] "DELETE /users/sign_out HTTP/1.0" 302 - 0.0069
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:34:37 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:34:37 +0900] "GET / HTTP/1.0" 200 - 0.0043
+Started GET "/users/sign_in" for 210.136.166.160 at 2017-11-29 17:34:39 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:34:39 +0900] "GET /users/sign_in HTTP/1.0" 200 - 0.0065
+Started GET "/users/auth/twitter" for 210.136.166.160 at 2017-11-29 17:34:41 +0900
+I, [2017-11-29T17:34:41.071488 #18433]  INFO -- omniauth: (twitter) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:34:41 +0900] "GET /users/auth/twitter HTTP/1.0" 302 100 0.2134
+Started GET "/users/auth/twitter" for 210.136.166.160 at 2017-11-29 17:34:41 +0900
+I, [2017-11-29T17:34:41.327680 #18435]  INFO -- omniauth: (twitter) Request phase initiated.
+210.136.166.160 - - [29/Nov/2017:17:34:41 +0900] "GET /users/auth/twitter HTTP/1.0" 302 100 0.2029
+Started GET "/users/auth/twitter/callback?oauth_token=CSdgfQAAAAAA27I3AAABYAbp6oY&oauth_verifier=7nF6pHZhm3zyaK3IRbrSTWSOCscQsVt9" for 210.136.166.160 at 2017-11-29 17:34:43 +0900
+I, [2017-11-29T17:34:43.820356 #18435]  INFO -- omniauth: (twitter) Callback phase initiated.
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"CSdgfQAAAAAA27I3AAABYAbp6oY", "oauth_verifier"=>"7nF6pHZhm3zyaK3IRbrSTWSOCscQsVt9"}
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT 1  [["provider", "twitter"], ["uid", "923488966044631040"]]
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  UPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["current_sign_in_at", "2017-11-29 08:34:44.458169"], ["sign_in_count", 2], ["updated_at", "2017-11-29 08:34:44.459072"], ["id", 1]]
+   (0.8ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+210.136.166.160 - - [29/Nov/2017:17:34:44 +0900] "GET /users/auth/twitter/callback?oauth_token=CSdgfQAAAAAA27I3AAABYAbp6oY&oauth_verifier=7nF6pHZhm3zyaK3IRbrSTWSOCscQsVt9 HTTP/1.0" 302 - 0.6436
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:34:44 +0900
+Processing by TopController#index as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+210.136.166.160 - - [29/Nov/2017:17:34:44 +0900] "GET / HTTP/1.0" 200 - 0.0062
+Started GET "/users/edit" for 210.136.166.160 at 2017-11-29 17:34:48 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+210.136.166.160 - - [29/Nov/2017:17:34:48 +0900] "GET /users/edit HTTP/1.0" 200 - 0.0147
+Started PUT "/users" for 210.136.166.160 at 2017-11-29 17:34:57 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K9ENZpw4gBBj3BxRzY8pNYESWZpPxgV8HKPSnS5YoNcSa4xtmFYg2zL46avYWd5qRkqxnkYioKW9qlU1+fgZwg==", "user"=>{"email"=>"923488966044631040-twitter@example.com", "name"=>"Twitaccount", "avatar_cache"=>""}, "commit"=>"Update"}
+  User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  UPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["name", "Twitaccount"], ["updated_at", "2017-11-29 08:34:57.460910"], ["id", 1]]
+   (0.8ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 12ms (ActiveRecord: 1.7ms)
+210.136.166.160 - - [29/Nov/2017:17:34:57 +0900] "PUT /users HTTP/1.0" 302 - 0.0156
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:34:57 +0900
+Processing by TopController#index as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Rendered top/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+210.136.166.160 - - [29/Nov/2017:17:34:57 +0900] "GET / HTTP/1.0" 200 - 0.0062
+Started GET "/blogs" for 210.136.166.160 at 2017-11-29 17:35:00 +0900
+Processing by BlogsController#index as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Blog Load (0.2ms)  SELECT "blogs".* FROM "blogs"
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered blogs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+210.136.166.160 - - [29/Nov/2017:17:35:00 +0900] "GET /blogs HTTP/1.0" 200 - 0.0079
+Started GET "/blogs/new" for 210.136.166.160 at 2017-11-29 17:35:01 +0900
+Processing by BlogsController#new as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Rendered blogs/_form.html.erb (2.2ms)
+  Rendered blogs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+210.136.166.160 - - [29/Nov/2017:17:35:01 +0900] "GET /blogs/new HTTP/1.0" 200 - 0.0091
+Started POST "/blogs/confirm" for 210.136.166.160 at 2017-11-29 17:35:06 +0900
+Processing by BlogsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GPpDMT4+X7ALL3CSN0sbaMfeguK9orK/sYf9XqGSxNghQMI6OlD/e1oLhWginew3AIZq5rRGF2YQjnr2djJ9zQ==", "blog"=>{"title"=>"test", "content"=>"test"}, "commit"=>"投稿"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Rendered blogs/confirm.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+210.136.166.160 - - [29/Nov/2017:17:35:06 +0900] "POST /blogs/confirm HTTP/1.0" 200 - 0.0082
+Started POST "/blogs" for 210.136.166.160 at 2017-11-29 17:35:08 +0900
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tsup404dxWhobr2tjX3AJ9o6Qrr1IwktYMb5L4XbLKd3cSjoSnNlozlKSFeYqzd4HWKqvvzHrPTBz36HUnuVsg==", "blog"=>{"title"=>"test", "content"=>"test"}, "commit"=>"登録"}
+  User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.2ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+   (0.1ms)  BEGIN
+  SQL (0.2ms)  INSERT INTO "blogs" ("title", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "test"], ["content", "test"], ["user_id", 1], ["created_at", "2017-11-29 08:35:08.056101"], ["updated_at", "2017-11-29 08:35:08.056101"]]
+   (0.7ms)  COMMIT
+Redirected to http://54.64.142.160/blogs
+  Rendered notice_mailer/sendmail_blog.html.erb within layouts/mailer (0.6ms)
+  Rendered notice_mailer/sendmail_blog.text.erb within layouts/mailer (0.3ms)
+
+NoticeMailer#sendmail_blog: processed outbound mail in 267.6ms
+
+Sent mail to t-nakai@nttpc.co.jp (2915.4ms)
+Date: Wed, 29 Nov 2017 17:35:08 +0900
+From: from@example.com
+To: t-nakai@nttpc.co.jp
+Message-ID: <5a1e713c51283_48032b073fa291505187f@ip-172-31-28-149.mail>
+Subject: =?UTF-8?Q?=E3=80=90Achieve=E3=80=91=E3=83=96=E3=83=AD=E3=82=B0=E3=81=8C=E6=8A=95=E7=A8=BF=E3=81=95=E3=82=8C=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a1e713c4ff02_48032b073fa29150517d2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a1e713c4ff02_48032b073fa29150517d2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+NoticeMailer#sendmail_blog
+
+, find me in app/views/notice_mailer/sendmail_blog.text.erb
+
+
+----==_mimepart_5a1e713c4ff02_48032b073fa29150517d2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PGh0bWw+CiAgPGJvZHk+CiAgICA8aDE+QWNoaWV2ZeOBq+aWsOOBl+OBj+OD
+luODreOCsOOBjOaKleeov+OBleOCjOOBvuOBl+OBn++8gTwvaDE+Cgo8aDQ+
+dGl0bGU6IHRlc3Q8L2g0Pgo8cD5jb250ZW50OiB0ZXN0PC9wPgoKPHA+CiAg
+PGEgaHJlZj0iaHR0cHM6Ly9uYW1lbGVzcy1yZXRyZWF0LTQ3ODgyLmhlcm9r
+dWFwcC5jb20vL2Jsb2dzIj7mipXnqL/jgZXjgozjgZ/jg5bjg63jgrDjga/j
+gZPjgaHjgok8L2E+CjwvcD4KCiAgPC9ib2R5Pgo8L2h0bWw+Cg==
+
+----==_mimepart_5a1e713c4ff02_48032b073fa29150517d2--
+
+Completed 302 Found in 3192ms (ActiveRecord: 1.7ms)
+210.136.166.160 - - [29/Nov/2017:17:35:11 +0900] "POST /blogs HTTP/1.0" 302 - 3.1953
+Started GET "/blogs" for 210.136.166.160 at 2017-11-29 17:35:11 +0900
+Processing by BlogsController#index as HTML
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+  Blog Load (0.2ms)  SELECT "blogs".* FROM "blogs"
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered blogs/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.9ms)
+210.136.166.160 - - [29/Nov/2017:17:35:11 +0900] "GET /blogs HTTP/1.0" 200 - 0.0139
+Started DELETE "/users/sign_out" for 210.136.166.160 at 2017-11-29 17:35:16 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Sqish9kd5oG0CwaN8RE11C4HiMeKSxOM0p5+xCgWhp1zEi2M3XNGSuUv83fkx8KL6V9gw4OvtlVzl/ls/7Y/iA=="}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+   (0.1ms)  SELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read" = $2  [["user_id", 1], ["read", "f"]]
+   (0.1ms)  BEGIN
+   (0.1ms)  COMMIT
+Redirected to http://54.64.142.160/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+210.136.166.160 - - [29/Nov/2017:17:35:16 +0900] "DELETE /users/sign_out HTTP/1.0" 302 - 0.0084
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:35:16 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:35:16 +0900] "GET / HTTP/1.0" 200 - 0.0044
+Started GET "/users/sign_in" for 210.136.166.160 at 2017-11-29 17:35:18 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:35:18 +0900] "GET /users/sign_in HTTP/1.0" 200 - 0.0063
+Started GET "/users/sign_up" for 210.136.166.160 at 2017-11-29 17:35:19 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:35:19 +0900] "GET /users/sign_up HTTP/1.0" 200 - 0.0083
+Started POST "/users" for 210.136.166.160 at 2017-11-29 17:35:35 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jq0PERKnWGAHEG5fyYfYfQnZqoDYHxNipw7oYuiceVyu6qu/R/SJUzn1LtPrFxRzmd2y7CFpKn1ZR3TvkvtLMQ==", "user"=>{"email"=>"t-nakai@nttpc.co.jp", "name"=>"Mailaccount", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"サインアップ"}
+   (0.1ms)  BEGIN
+  User Exists (0.3ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't-nakai@nttpc.co.jp' LIMIT 1
+  SQL (0.2ms)  INSERT INTO "users" ("email", "encrypted_password", "name", "uid", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["email", "t-nakai@nttpc.co.jp"], ["encrypted_password", "$2a$11$Po3QZEqEHySxdmtr/xQ86uFBXiohgfZmJqTlYxgcq5HQEZ3geVZLu"], ["name", "Mailaccount"], ["uid", "4352144e-cb49-46c4-9ba8-f086461fd8b5"], ["created_at", "2017-11-29 08:35:35.375107"], ["updated_at", "2017-11-29 08:35:35.375107"], ["confirmation_token", "T_ifzGxzybPnuzsPTAW-"], ["confirmation_sent_at", "2017-11-29 08:35:35.375411"]]
+   (0.8ms)  COMMIT
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 7.3ms
+
+Sent mail to t-nakai@nttpc.co.jp (74.4ms)
+Date: Wed, 29 Nov 2017 17:35:35 +0900
+From: noreply@yourdomain
+Reply-To: noreply@yourdomain
+To: t-nakai@nttpc.co.jp
+Message-ID: <5a1e71575e7a1_48032b073fa29150519f9@ip-172-31-28-149.mail>
+Subject: =?UTF-8?Q?=E3=82=A2=E3=82=AB=E3=82=A6=E3=83=B3=E3=83=88=E3=81=AE=E6=9C=89=E5=8A=B9=E5=8C=96=E3=81=AB=E3=81=A4=E3=81=84=E3=81=A6?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome t-nakai@nttpc.co.jp!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="https://nameless-retreat-47882.herokuapp.com//users/confirmation?confirmation_token=T_ifzGxzybPnuzsPTAW-">Confirm my account</a></p>
+
+Redirected to http://54.64.142.160/
+Completed 302 Found in 254ms (ActiveRecord: 1.4ms)
+210.136.166.160 - - [29/Nov/2017:17:35:35 +0900] "POST /users HTTP/1.0" 302 - 0.2567
+Started GET "/" for 210.136.166.160 at 2017-11-29 17:35:35 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+210.136.166.160 - - [29/Nov/2017:17:35:35 +0900] "GET / HTTP/1.0" 200 - 0.0045
+

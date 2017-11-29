@@ -1,0 +1,425 @@
+nakai4713:~/workspace/achive (master) $ bundle exec cap production deploy
+00:00 git:wrapper
+      01 mkdir -p /tmp
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.189s
+      Uploading /tmp/git-ssh-achieve-production-ubuntu.sh 100.0%
+      02 chmod 700 /tmp/git-ssh-achieve-production-ubuntu.sh
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.188s
+00:00 git:check
+      01 git ls-remote --heads https://github.com/t-nakai4713/achieve
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bf4255264f2c4c534b05263a6ac2b8af0f59901c       refs/heads/master
+    ✔ 01 app@54.64.142.160 0.828s
+00:01 deploy:check:directories
+      01 mkdir -p /var/www/achieve/shared /var/www/achieve/releases
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.185s
+00:01 deploy:check:linked_dirs
+      01 mkdir -p /var/www/achieve/shared/log /var/www/achieve/shared/tmp/pids /var/www/achieve/shared/tmp/cache /var/www/achieve/s…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.185s
+00:01 deploy:check:make_linked_dirs
+      01 mkdir -p /var/www/achieve/shared /var/www/achieve/shared/config
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.187s
+00:02 git:clone
+      The repository mirror is at /var/www/achieve/repo
+00:03 git:update
+      01 git remote update --prune
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 Fetching origin
+    ✔ 01 app@54.64.142.160 0.813s
+00:04 git:create_release
+      01 mkdir -p /var/www/achieve/releases/20171129082113
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.188s
+      02 git archive master | tar -x -f - -C /var/www/achieve/releases/20171129082113
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.225s
+00:05 git:set_current_revision
+      01 echo "bf4255264f2c4c534b05263a6ac2b8af0f59901c" >> REVISION
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.188s
+00:05 deploy:symlink:linked_files
+      01 mkdir -p /var/www/achieve/releases/20171129082113 /var/www/achieve/releases/20171129082113/config
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.186s
+      02 ln -s /var/www/achieve/shared/.env /var/www/achieve/releases/20171129082113/.env
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.189s
+      03 rm /var/www/achieve/releases/20171129082113/config/secrets.yml
+      03 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 03 app@54.64.142.160 0.189s
+      04 ln -s /var/www/achieve/shared/config/secrets.yml /var/www/achieve/releases/20171129082113/config/secrets.yml
+      04 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 04 app@54.64.142.160 0.189s
+00:06 deploy:symlink:linked_dirs
+      01 mkdir -p /var/www/achieve/releases/20171129082113 /var/www/achieve/releases/20171129082113/tmp /var/www/achieve/releases/2…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.183s
+      02 rm -rf /var/www/achieve/releases/20171129082113/log
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.188s
+      03 ln -s /var/www/achieve/shared/log /var/www/achieve/releases/20171129082113/log
+      03 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 03 app@54.64.142.160 0.187s
+      04 ln -s /var/www/achieve/shared/tmp/pids /var/www/achieve/releases/20171129082113/tmp/pids
+      04 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 04 app@54.64.142.160 0.188s
+      05 ln -s /var/www/achieve/shared/tmp/cache /var/www/achieve/releases/20171129082113/tmp/cache
+      05 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 05 app@54.64.142.160 0.188s
+      06 ln -s /var/www/achieve/shared/tmp/sockets /var/www/achieve/releases/20171129082113/tmp/sockets
+      06 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 06 app@54.64.142.160 0.187s
+      07 ln -s /var/www/achieve/shared/public/uploads /var/www/achieve/releases/20171129082113/public/uploads
+      07 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 07 app@54.64.142.160 0.188s
+      08 rm -rf /var/www/achieve/releases/20171129082113/public/assets
+      08 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 08 app@54.64.142.160 0.190s
+      09 ln -s /var/www/achieve/shared/public/assets /var/www/achieve/releases/20171129082113/public/assets
+      09 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 09 app@54.64.142.160 0.189s
+00:11 bundler:install
+      01 /usr/local/rbenv/bin/rbenv exec bundle install --path /var/www/achieve/shared/bundle --without development test --deployme…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.530s
+00:12 deploy:assets:precompile
+      01 /usr/local/rbenv/bin/rbenv exec bundle exec rake assets:precompile
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 2.957s
+00:15 deploy:assets:backup_manifest
+      01 mkdir -p /var/www/achieve/releases/20171129082113/assets_manifest_backup
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.189s
+      02 cp /var/www/achieve/releases/20171129082113/public/assets/.sprockets-manifest-c9590f453c44320ecbc963b68a2d084e.json /var/w…
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.187s
+00:15 deploy:migrate
+      [deploy:migrate] Run `rake db:migrate`
+00:16 deploy:migrating
+      01 /usr/local/rbenv/bin/rbenv exec bundle exec rake db:migrate
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 The PGconn, PGresult, and PGError constants are deprecated, and will be
+      01 removed as of version 1.0.
+      01
+      01 You should use PG::Connection, PG::Result, and PG::Error instead, respectively.
+      01
+      01 Called from /var/www/achieve/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `…
+      01    (7.7ms)  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+      01    (3.0ms)  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+      01   ActiveRecord::SchemaMigration Load (0.2ms)  SELECT "schema_migrations".* FROM "schema_migrations"
+      01 Migrating to CreateBlogs (20170727084118)
+      01    (0.1ms)  BEGIN
+      01 == 20170727084118 CreateBlogs: migrating ======================================
+      01
+      01 -- create_table(:blogs)
+      01
+      01    (6.6ms)  CREATE TABLE "blogs" ("id" serial primary key, "title" character varying, "content" text, "created_at" timesta…
+      01    -> 0.0073s
+      01
+      01 == 20170727084118 CreateBlogs: migrated (0.0075s) =============================
+      01
+      01
+      01   SQL (0.2ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20170727084118"]]
+      01    (1.2ms)  COMMIT
+      01 Migrating to CreateContacts (20170727100302)
+      01    (0.1ms)  BEGIN
+      01 == 20170727100302 CreateContacts: migrating ===================================
+      01
+      01 -- create_table(:contacts)
+      01
+      01    (5.7ms)  CREATE TABLE "contacts" ("id" serial primary key, "name" character varying, "email" character varying, "conten…
+      01    -> 0.0060s
+      01
+      01 == 20170727100302 CreateContacts: migrated (0.0061s) ==========================
+      01
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20170727100302"]]
+      01    (1.0ms)  COMMIT
+      01 Migrating to DeviseCreateUsers (20171010093728)
+      01    (0.1ms)  BEGIN
+      01 == 20171010093728 DeviseCreateUsers: migrating ================================
+      01
+      01 -- create_table(:users)
+      01
+      01    (5.8ms)  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_passw…
+      01    -> 0.0068s
+      01
+      01 -- add_index(:users, :email, {:unique=>true})
+      01
+      01    (2.3ms)  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+      01    -> 0.0036s
+      01
+      01 -- add_index(:users, :reset_password_token, {:unique=>true})
+      01
+      01    (2.2ms)  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")
+      01    -> 0.0033s
+      01
+      01 == 20171010093728 DeviseCreateUsers: migrated (0.0141s) =======================
+      01
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171010093728"]]
+      01    (1.1ms)  COMMIT
+      01 Migrating to AddNameToUsers (20171011021941)
+      01    (0.1ms)  BEGIN
+      01 == 20171011021941 AddNameToUsers: migrating ===================================
+      01
+      01 -- add_column(:users, :name, :string)
+      01
+      01    (0.2ms)  ALTER TABLE "users" ADD "name" character varying
+      01    -> 0.0005s
+      01
+      01 == 20171011021941 AddNameToUsers: migrated (0.0006s) ==========================
+      01
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171011021941"]]
+      01    (0.6ms)  COMMIT
+      01 Migrating to AddUserIdToBlogs (20171017024858)
+      01    (0.1ms)  BEGIN
+      01 == 20171017024858 AddUserIdToBlogs: migrating =================================
+      01
+      01 -- add_column(:blogs, :user_id, :integer)
+      01
+      01    (0.2ms)  ALTER TABLE "blogs" ADD "user_id" integer
+      01    -> 0.0004s
+      01
+      01 == 20171017024858 AddUserIdToBlogs: migrated (0.0004s) ========================
+      01
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171017024858"]]
+      01    (0.6ms)  COMMIT
+      01 Migrating to AddConfirmableToDevise (20171019075836)
+      01    (0.1ms)  BEGIN
+      01 == 20171019075836 AddConfirmableToDevise: migrating ===========================
+      01
+      01 -- add_column(:users, :confirmation_token, :string)
+      01
+      01    (0.2ms)  ALTER TABLE "users" ADD "confirmation_token" character varying
+      01    -> 0.0004s
+      01
+      01 -- add_column(:users, :confirmed_at, :datetime)
+      01
+      01    (0.1ms)  ALTER TABLE "users" ADD "confirmed_at" timestamp
+      01    -> 0.0003s
+      01
+      01 -- add_column(:users, :confirmation_sent_at, :datetime)
+      01
+      01    (0.1ms)  ALTER TABLE "users" ADD "confirmation_sent_at" timestamp
+      01    -> 0.0003s
+      01
+      01 -- add_column(:users, :unconfirmed_email, :string)
+      01
+      01    (0.1ms)  ALTER TABLE "users" ADD "unconfirmed_email" character varying
+      01    -> 0.0003s
+      01
+      01 -- add_index(:users, :confirmation_token, {:unique=>true})
+      01
+      01    (2.4ms)  CREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")
+      01    -> 0.0036s
+      01
+      01 -- execute("UPDATE users SET confirmed_at = NOW()")
+      01
+      01    (0.3ms)  UPDATE users SET confirmed_at = NOW()
+      01    -> 0.0004s
+      01
+      01 == 20171019075836 AddConfirmableToDevise: migrated (0.0056s) ==================
+      01
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171019075836"]]
+      01    (0.8ms)  COMMIT
+      01 Migrating to AddAdminToUser (20171019091952)
+      01    (0.1ms)  BEGIN
+      01 == 20171019091952 AddAdminToUser: migrating ===================================
+      01
+      01 -- add_column(:users, :admin, :boolean, {:default=>false})
+      01
+      01    (12.4ms)  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+      01    -> 0.0128s
+      01
+      01 == 20171019091952 AddAdminToUser: migrated (0.0129s) ==========================
+      01
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171019091952"]]
+      01    (1.2ms)  COMMIT
+      01 Migrating to AddOmniauthColumnsToUsers (20171026101207)
+      01    (0.1ms)  BEGIN
+      01 == 20171026101207 AddOmniauthColumnsToUsers: migrating ========================
+      01
+      01 -- add_column(:users, :uid, :string, {:null=>false, :default=>""})
+      01
+      01    (11.4ms)  ALTER TABLE "users" ADD "uid" character varying DEFAULT '' NOT NULL
+      01    -> 0.0118s
+      01
+      01 -- add_column(:users, :provider, :string, {:null=>false, :default=>""})
+      01
+      01    (11.8ms)  ALTER TABLE "users" ADD "provider" character varying DEFAULT '' NOT NULL
+      01    -> 0.0121s
+      01 -- add_column(:users, :image_url, :string)
+      01    (0.2ms)  ALTER TABLE "users" ADD "image_url" character varying
+      01    -> 0.0003s
+      01 -- add_index(:users, [:uid, :provider], {:unique=>true})
+      01    (2.3ms)  CREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")
+      01    -> 0.0036s
+      01 == 20171026101207 AddOmniauthColumnsToUsers: migrated (0.0281s) ===============
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171026101207"]]
+      01    (1.7ms)  COMMIT
+      01 Migrating to AddAvatarToUsers (20171107042117)
+      01    (0.1ms)  BEGIN
+      01 == 20171107042117 AddAvatarToUsers: migrating =================================
+      01 -- add_column(:users, :avatar, :string)
+      01    (0.2ms)  ALTER TABLE "users" ADD "avatar" character varying
+      01    -> 0.0004s
+      01 == 20171107042117 AddAvatarToUsers: migrated (0.0004s) ========================
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171107042117"]]
+      01    (0.7ms)  COMMIT
+      01 Migrating to CreateComments (20171115055431)
+      01    (0.1ms)  BEGIN
+      01 == 20171115055431 CreateComments: migrating ===================================
+      01
+      01 -- create_table(:comments)
+      01
+      01    (5.2ms)  CREATE TABLE "comments" ("id" serial primary key, "user_id" integer, "blog_id" integer, "content" text, "creat…
+      01    (2.1ms)  CREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")
+      01    (2.3ms)  CREATE  INDEX  "index_comments_on_blog_id" ON "comments"  ("blog_id")
+      01    (1.2ms)  ALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+      01 FOREIGN KEY ("user_id")
+      01   REFERENCES "users" ("id")
+      01
+      01    (0.7ms)  ALTER TABLE "comments" ADD CONSTRAINT "fk_rails_b9ae98a823"
+      01 FOREIGN KEY ("blog_id")
+      01   REFERENCES "blogs" ("id")
+      01 
+      01    -> 0.0148s
+      01 == 20171115055431 CreateComments: migrated (0.0149s) ==========================
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171115055431"]]
+      01    (1.1ms)  COMMIT
+      01 Migrating to CreateRelationships (20171116054948)
+      01    (0.1ms)  BEGIN
+      01 == 20171116054948 CreateRelationships: migrating ==============================
+      01 -- create_table(:relationships)
+      01    (3.4ms)  CREATE TABLE "relationships" ("id" serial primary key, "follower_id" integer, "followed_id" integer, "created_…
+      01    -> 0.0041s
+      01 -- add_index(:relationships, :follower_id)
+      01    (2.3ms)  CREATE  INDEX  "index_relationships_on_follower_id" ON "relationships"  ("follower_id")
+      01    -> 0.0035s
+      01 -- add_index(:relationships, :followed_id)
+      01    (2.3ms)  CREATE  INDEX  "index_relationships_on_followed_id" ON "relationships"  ("followed_id")
+      01    -> 0.0035s
+      01 -- add_index(:relationships, [:follower_id, :followed_id], {:unique=>true})
+      01    (2.4ms)  CREATE UNIQUE INDEX  "index_relationships_on_follower_id_and_followed_id" ON "relationships"  ("follower_id", …
+      01    -> 0.0036s
+      01 == 20171116054948 CreateRelationships: migrated (0.0148s) =====================
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171116054948"]]
+      01    (1.0ms)  COMMIT
+      01 Migrating to CreateConversations (20171117071130)
+      01    (0.1ms)  BEGIN
+      01 == 20171117071130 CreateConversations: migrating ==============================
+      01 -- create_table(:conversations)
+      01    (3.0ms)  CREATE TABLE "conversations" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_a…
+      01    -> 0.0032s
+      01 == 20171117071130 CreateConversations: migrated (0.0032s) =====================
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171117071130"]]
+      01    (0.9ms)  COMMIT
+      01 Migrating to CreateMessages (20171117071346)
+      01    (0.1ms)  BEGIN
+      01 == 20171117071346 CreateMessages: migrating ===================================
+      01 -- create_table(:messages)
+      01    (5.4ms)  CREATE TABLE "messages" ("id" serial primary key, "body" text, "conversation_id" integer, "user_id" integer, "…
+      01    (2.3ms)  CREATE  INDEX  "index_messages_on_conversation_id" ON "messages"  ("conversation_id")
+      01    (2.2ms)  CREATE  INDEX  "index_messages_on_user_id" ON "messages"  ("user_id")
+      01    (0.7ms)  ALTER TABLE "messages" ADD CONSTRAINT "fk_rails_7f927086d2"
+      01 FOREIGN KEY ("conversation_id")
+      01   REFERENCES "conversations" ("id")
+      01 
+      01    (0.7ms)  ALTER TABLE "messages" ADD CONSTRAINT "fk_rails_273a25a7a6"
+      01 FOREIGN KEY ("user_id")
+      01   REFERENCES "users" ("id")
+      01
+      01    -> 0.0148s
+      01 == 20171117071346 CreateMessages: migrated (0.0149s) ==========================
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171117071346"]]
+      01    (1.4ms)  COMMIT
+      01 Migrating to CreateNotifications (20171124063219)
+      01    (0.1ms)  BEGIN
+      01 == 20171124063219 CreateNotifications: migrating ==============================
+      01 -- create_table(:notifications)
+      01    (3.2ms)  CREATE TABLE "notifications" ("id" serial primary key, "read" boolean DEFAULT 'f', "user_id" integer, "comment…
+      01    (2.3ms)  CREATE  INDEX  "index_notifications_on_user_id" ON "notifications"  ("user_id")
+      01    (2.2ms)  CREATE  INDEX  "index_notifications_on_comment_id" ON "notifications"  ("comment_id")
+      01    (0.7ms)  ALTER TABLE "notifications" ADD CONSTRAINT "fk_rails_b080fb4855"
+      01 FOREIGN KEY ("user_id")
+      01   REFERENCES "users" ("id")
+      01 
+      01    (0.7ms)  ALTER TABLE "notifications" ADD CONSTRAINT "fk_rails_9268535f02"
+      01 FOREIGN KEY ("comment_id")
+      01   REFERENCES "comments" ("id")
+      01
+      01    -> 0.0130s
+      01 == 20171124063219 CreateNotifications: migrated (0.0130s) =====================
+      01
+      01   SQL (0.1ms)  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20171124063219"]]
+      01    (1.0ms)  COMMIT
+    ✔ 01 app@54.64.142.160 3.002s
+00:19 deploy:symlink:release
+      01 ln -s /var/www/achieve/releases/20171129082113 /var/www/achieve/releases/current
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.185s
+      02 mv /var/www/achieve/releases/current /var/www/achieve
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.188s
+00:19 unicorn:start
+      01 /usr/local/rbenv/bin/rbenv exec bundle exec unicorn -c /var/www/achieve/current/config/unicorn/production.rb -E deployment…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+Message-ID: <5a1e71575e7a1_48032b073fa29150519f9@ip-172-31-28-149.mail>
+Subject: =?UTF-8?Q?=E3=82=A2=E3=82=AB=E3=82=A6=E3=83=B3=E3=83=88=E3=81=AE=E6=9C=89=E5=8A=B9=E5=8C=96=E3=81=AB=E3=81=A4=E3=81=84=E3=8      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 2.983s
+      unicorn restarting...
+      02 kill -s USR2 `cat /var/www/achieve/current/tmp/pids/unicorn.pid`
+      02 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 02 app@54.64.142.160 0.192s
+00:33 deploy:cleanup
+      Keeping 5 of 12 deployed releases on 54.64.142.160
+      01 rm -rf /var/www/achieve/releases/20171128045001 /var/www/achieve/releases/20171128050502 /var/www/achieve/releases/2017112…      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.386s
+00:33 deploy:log_revision
+      01 echo "Branch master (at bf4255264f2c4c534b05263a6ac2b8af0f59901c) deployed as release 20171129082113 by ubuntu" >> /var/ww…
+      01 bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+    ✔ 01 app@54.64.142.160 0.189s
+
